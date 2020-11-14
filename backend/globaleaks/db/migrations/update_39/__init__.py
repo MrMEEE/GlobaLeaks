@@ -136,16 +136,6 @@ class FieldOption_v_38(Model):
     trigger_field = Column(UnicodeText)
 
 
-class FieldAnswer_v_38(Model):
-    __tablename__ = 'fieldanswer'
-    id = Column(UnicodeText(36), primary_key=True, default=uuid4, nullable=False)
-    internaltip_id = Column(UnicodeText(36))
-    fieldanswergroup_id = Column(UnicodeText(36))
-    key = Column(UnicodeText, default='')
-    is_leaf = Column(Boolean, default=True)
-    value = Column(UnicodeText, default='')
-
-
 class FieldAnswerGroup_v_38(Model):
     __tablename__ = 'fieldanswergroup'
     id = Column(UnicodeText(36), primary_key=True, default=uuid4, nullable=False)
@@ -282,14 +272,6 @@ class Message_v_38(Model):
     content = Column(UnicodeText)
     type = Column(UnicodeText)
     new = Column(Integer, default=True)
-
-
-class Questionnaire_v_38(Model):
-    __tablename__ = 'questionnaire'
-    id = Column(UnicodeText(36), primary_key=True, default=uuid4, nullable=False)
-    name = Column(UnicodeText)
-    show_steps_navigation_bar = Column(Boolean, default=False)
-    enable_whistleblower_identity = Column(Boolean, default=False)
 
 
 class User_v_38(Model):
